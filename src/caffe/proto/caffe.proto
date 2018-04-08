@@ -420,8 +420,13 @@ message LayerParameter {
   optional ThresholdParameter threshold_param = 128;
   optional TileParameter tile_param = 138;
   optional WindowDataParameter window_data_param = 129;
+  optional ReLU6Parameter relu6_param = 200;
 }
-
+// Message that stores parameters for ReLU6 layer
+// see `ReLUParameter` for detail
+message ReLU6Parameter {
+  optional float negative_slope = 1 [default = 0];
+}
 // Message that stores parameters used to apply transformation
 // to the data layer's data
 message TransformationParameter {
